@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Lab 1.1 - Hello World VR</title>
+    <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-sky src="skybox.jpg"></a-sky>
+      <a-text value="Omg text in VR" position="-1 1.5 -3" color="#FFFFFF"></a-text>
+
+      <a-entity look-controls>
+        <a-entity cursor="rayOrigin: mouse;" position="0 0 -1" 
+                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" 
+                    material="color: black; shader: flat">
+        </a-entity>
+      </a-entity>
+
+      <a-sphere id="mijnBol" position="2 1 -4" color="red"></a-sphere>
+      <a-box id="mijnKubus" position="-2 1 -4" color="blue" interactief-object></a-box>
+
+    </a-scene>
+    
+  </body>
+</html>
