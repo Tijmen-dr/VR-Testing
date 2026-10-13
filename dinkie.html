@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.8.0/aframe.min.js" defer></script>
+</head>
+<body>
+    <a-scene>
+        <a-sky color="skyblue"></a-sky>
+
+        <a-camera>
+            <a-cursor></a-cursor>
+        </a-camera>
+
+        <a-entity id="shell" 
+        geometry="primitive: sphere; radius: 0.3" 
+        position="1.5 0.5 -5" 
+        material="color: #F5DEB3" 
+        sound="src: url(i_did_it.mp3); on: click" 
+        animation="property: scale; to: 1.5 1.5 1.5; loop: 1; dur: 300">
+        </a-entity>
+
+        <a-entity id="funny-shell" 
+        geometry="primitive: cone; radiusBottom: 0.5 radius: 0.3" 
+        rotation="0 0 0"
+        animation="property: rotation; to: 360 0 0; dur: 1000; loop: 0; startEvents: mouseenter"
+        position="1 0.5 -3" 
+        material="color: #F5DEB3" 
+        sound="src: url(i_did_it.mp3); on: click">
+        </a-entity>
+        
+
+        <a-entity 
+        id="ground" 
+        geometry="primitive: plane; width: 10; height: 10" 
+        position="0 0 -5"
+        rotation="-90 0 0" 
+        material="color: #E8E2CF; side : double">
+        </a-entity>
+
+        <a-entity id="mat" geometry="primitive: plane; width: 1.2; height: 3"
+        position="0 0.01 -6"
+        rotation="-90 0 0"
+        material="color: darkred; side: double">
+        </a-entity>
+
+        <a-entity id="cilinder" geometry="primitive: cylinder; radius: 0.1; height: 2"
+        position="-1 0.75 -5"
+        material="color: #8B4513">
+        </a-entity>
+d
+        <a-entity id="parasol-cone" geometry="primitive: cone; radiusBottom: 1.3; radiusTop: 0; height: 0.3"
+        position="-1 1.91 -5"
+        material="color: #FF6347"
+        shadow="cast: true; receive: true;">
+        </a-entity>
+
+        <a-assets>
+            <a-asset-item id="test" 
+            src="GLB_format/cannon.glb"></a-asset-item>
+            <a-asset-item id="test2" 
+            src="GLB_format/bottle.glb"></a-asset-item>
+        </a-assets>
+
+        <a-entity gltf-model="#test"
+        position="0 0.5 -4"
+         animation="property: rotation;
+        to: 0 360 0; loop: 100000000000000
+        dur: 1000; easing: linear"
+        animation__float="property: position; to: 0 0.7 -4; dir: alternate; loop: 100000000000000; dur: 2000; easing: easeInOutSine"
+        scale="0.5 0.5 0.5"></a-entity>
+
+        <a-entity gltf-model="#test2"
+        position="0 0.5 -3"
+        animation="property: rotation;
+        to: 0 360 0; loop: 100000000000000
+        dur: 8000; easing: linear"
+        animation__float="property: position; to: 0 0.7 -3; dir: alternate; loop: 100000000000000; dur: 2000; easing: easeInOutSine"
+        scale="0.5 0.5 0.5"></a-entity>
+
+        <a-entity light="type:directional; intensity: 3;" position= "0 10 10;"></a-entity>
+
+    </a-scene>
+    
+</body>
+</html>
